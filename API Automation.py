@@ -5,7 +5,7 @@ import requests, json, re
 google_api_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address&input=surfing%20beaches%20in%20Sydney&inputtype=textquery"
 
 # Enter your API key here
-google_api_key = "&"+ "&key=AIzaSyDfyct62Zw9snqHqv9D14NngWTcV386TYM"
+google_api_key = "&"+ "Your_google_api_key"
 
 #Complete url for google api
 rating_url = google_api_url+google_api_key
@@ -26,7 +26,7 @@ code_post = (re.search("(\d+\w)", Beach_address).group())
 base_url = "https://api.weatherbit.io/v2.0/forecast/daily?postal_code="
 
 # Enter your API key here
-weather_api_key = "&"+"key=307c636c4c304723ac1a77a5277a1b67"
+weather_api_key = "&"+"your_weatherbit_api_key"
 
 # weather Url is comb of base url with postal code and api key
 complete_url = base_url+code_post+weather_api_key
