@@ -2,13 +2,13 @@ from datetime import datetime
 import requests, json, re
 
 # google api to find the famous beach in Sydney
-google_api_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address"
+google_api_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?fields=formatted_address%2Cname%2Crating%2Copening_hours%2Cgeometry"
 
 #google_keyword_search to key-in the user defined search parameter.
 #famous beaches of Sydney or top beaches of Sydney or surfing beaches in Sydney etc
-google_keyword_search = "&" + "input=top-rated%20beaches%20of%20Sydney&inputtype=textquery"
+google_keyword_search = "&" + "input=famous%20beaches%20of%20Sydney&inputtype=textquery"
 # Enter your API key here
-google_api_key = "&"+ "Enter_Your_Google API_key"
+google_api_key = "&key="+ "AIzaSyDfyct62Zw9snqHqv9D14NngWTcV386TYM"
 
 #Complete url for google api
 rating_url = google_api_url+google_keyword_search+google_api_key
@@ -30,7 +30,7 @@ code_post = (re.search("(\d+\w)", Beach_address).group())
 base_url = "https://api.weatherbit.io/v2.0/forecast/daily?postal_code="
 
 # Enter your API key here
-weather_api_key = "&"+"Enter your Weather API Key"
+weather_api_key = "&key="+"307c636c4c304723ac1a77a5277a1b67"
 
 # weather Url is comb of base url with postal code and api key
 complete_url = base_url+code_post+weather_api_key
